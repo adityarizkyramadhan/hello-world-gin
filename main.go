@@ -1,13 +1,8 @@
 package main
 
 import (
-	"fmt"
 	"github.com/joho/godotenv"
-	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
-	"log"
 	"net/http"
-	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -49,7 +44,7 @@ func main() {
 			"message": "pong",
 		})
 	})
-	err = router.Run()
+	err := router.Run()
 	if err != nil {
 		return
 	}
