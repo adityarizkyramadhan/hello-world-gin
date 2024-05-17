@@ -44,7 +44,7 @@ func main() {
 			"message": "pong",
 		})
 	})
-	err := router.Run()
+	err := router.Run(":5757")
 	if err != nil {
 		return
 	}
