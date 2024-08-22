@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/joho/godotenv"
 	"net/http"
+
+	"github.com/joho/godotenv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -42,9 +43,19 @@ func main() {
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
-			"hai" : " WKWKWK",
+			"hai":     " WKWKWK",
 		})
 	})
+
+	router.GET("/ping/:name", func(c *gin.Context) {
+		name := c.Param("name")
+		c.JSON(http.StatusOK, gin.H{
+			"message": "pong",
+			"hai":     " WKWKWK",
+			"name":    name,
+		})
+	})
+
 	err := router.Run(":5757")
 	if err != nil {
 		return
