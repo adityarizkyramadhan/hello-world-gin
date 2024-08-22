@@ -52,7 +52,7 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 			"hai":     " WKWKWK",
-			"name":    name,
+			"name":    "Halo " + name,
 		})
 	})
 
